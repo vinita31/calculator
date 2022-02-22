@@ -3,6 +3,7 @@ var input = document.querySelector('#input');
 var result = document.querySelector('#result');
 var button = document.querySelectorAll('button');
 var clear = document.querySelector('#clear');
+let erase= document.querySelector('#erase');
 var equal = document.querySelector('#equal');
 
 //declaring a array which collect input from user as a form of string
@@ -25,7 +26,7 @@ button.forEach((btn) =>
     btn.addEventListener("click", () =>
     {
         // when clicked button is not a clear button
-        if (!btn.id.match('clear')) {
+        if (!btn.id.match('erase')) {
             //push the input press by user
             a.push(btn.value);
             // join the string 
@@ -35,14 +36,14 @@ button.forEach((btn) =>
                 result.innerHTML = eval(a.join(''));
             }
         }
-        if (btn.id.match('clear')) {
+        if (btn.id.match('erase')) {
             a.pop();
             input.innerHTML = a.join('');
             result.innerHTML = eval(a.join(''));
         }
-        if (btn.id.match('equal')) {
-            input.className = 'result';
-            result.className = 'input';
+        if (typeof eval(a.join('')) == 'undefined') {
+            result.innerHTML = 0
         }
+
     })
 })
