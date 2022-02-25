@@ -8,6 +8,7 @@
     height : 65px;
     font-size: 30px;
     text-align: right;
+    overflow: auto;
 }
 #display #result{
     /* height : 60px; */
@@ -15,6 +16,7 @@
     font-size: 40px;
     text-align: right;
     background-color: #aabcdb;
+    overflow: auto;
     
 }
 .keys{
@@ -50,4 +52,7 @@
 }
 .evaluate{
     font-size: 30;
+}
+#clear{
+    
 }
